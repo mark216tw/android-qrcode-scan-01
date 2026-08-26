@@ -267,7 +267,7 @@ private fun calendarIntent(value: String): Intent {
 
 private fun copyContent(context: Context, content: String) {
     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    clipboard.setPrimaryClip(ClipData.newPlainText("QR Code", content))
+    clipboard.setPrimaryClip(ClipData.newPlainText("掃描內容", content))
     Toast.makeText(context, "已複製", Toast.LENGTH_SHORT).show()
 }
 

@@ -138,7 +138,18 @@ fun scanQrFromImage(
 
 private fun createQrScanner(): BarcodeScanner {
     val options = BarcodeScannerOptions.Builder()
-        .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
+        .setBarcodeFormats(
+            Barcode.FORMAT_QR_CODE,
+            Barcode.FORMAT_EAN_8,
+            Barcode.FORMAT_EAN_13,
+            Barcode.FORMAT_UPC_A,
+            Barcode.FORMAT_UPC_E,
+            Barcode.FORMAT_CODE_39,
+            Barcode.FORMAT_CODE_93,
+            Barcode.FORMAT_CODE_128,
+            Barcode.FORMAT_ITF,
+            Barcode.FORMAT_CODABAR,
+        )
         .build()
     return BarcodeScanning.getClient(options)
 }

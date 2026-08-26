@@ -145,7 +145,7 @@ fun SettingsScreen(contentPadding: PaddingValues, repository: AppRepository) {
                     Column {
                         Text("隱私優先", fontWeight = FontWeight.SemiBold)
                         Text(
-                            "QR Code 在裝置上辨識，不上傳掃描內容。",
+                            "QR Code 與一維條碼在裝置上辨識，不上傳掃描內容。",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )

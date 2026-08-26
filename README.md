@@ -1,13 +1,14 @@
 # 簡單QR掃描
 
-一款以快速、簡單與隱私為核心的 Android QR Code 掃描工具。支援相機即時掃描及圖片辨識，掃描內容只在裝置端處理，不需要網路連線。
+一款以快速、簡單與隱私為核心的 Android QR Code 與一維條碼掃描工具。支援相機即時掃描及圖片辨識，掃描內容只在裝置端處理，不需要網路連線。
 
-> 目前提供的是 `v1.0.0-debug.1` Debug 測試版本，並非正式發行版本。
+> 目前提供的是 `v1.0.0-debug.2` Debug 測試版本，並非正式發行版本。
 
 ## 主要功能
 
-- 使用相機即時辨識 QR Code
-- 支援從圖片選擇 QR Code
+- 使用相機即時辨識 QR Code 與一維條碼
+- 支援從圖片辨識 QR Code 與一維條碼
+- 支援 EAN-8、EAN-13、UPC-A、UPC-E、Code 39、Code 93、Code 128、ITF 及 Codabar
 - 支援手電筒、自動對焦、掃描提示音與震動
 - 辨識網址、Wi-Fi、電話、Email、簡訊、位置、聯絡人、行事曆及一般文字
 - 提供複製、分享與對應的 Android 系統操作
@@ -19,7 +20,7 @@
 
 ## 隱私設計
 
-- QR Code 使用裝置端模型辨識，不上傳掃描內容
+- QR Code 與一維條碼使用裝置端模型辨識，不上傳掃描內容
 - App 不要求網路權限
 - 僅在使用相機掃描時要求相機權限
 - 圖片透過 Android Photo Picker 選擇，不讀取整個相簿
@@ -70,4 +71,4 @@ Debug APK 使用 Android Debug 簽章，只適合功能測試，不應作為正�
 
 ## 版本狀態
 
-目前版本為 `v1.0.0-debug.1` Pre-release。版本內容請參考 [CHANGELOG.md](CHANGELOG.md)。
+目前版本為 `v1.0.0-debug.2` Pre-release。版本內容請參考 [CHANGELOG.md](CHANGELOG.md)。

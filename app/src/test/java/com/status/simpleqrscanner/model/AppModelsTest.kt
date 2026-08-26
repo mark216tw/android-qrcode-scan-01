@@ -5,7 +5,7 @@ import org.junit.Test
 
 class AppModelsTest {
     @Test
-    fun `classifies supported QR payloads`() {
+    fun `classifies supported scan payloads`() {
         val cases = mapOf(
             "https://example.com" to QrContentType.URL,
             "www.example.com" to QrContentType.URL,
@@ -27,5 +27,19 @@ class AppModelsTest {
     @Test
     fun `classification ignores leading and trailing whitespace`() {
         assertEquals(QrContentType.URL, classifyQrContent("  https://example.com  "))
+    }
+
+    @Test
+    fun `classifies one dimensional barcode values as text`() {
+        val values = listOf(
+            "96385074",
+            "4006381333931",
+            "036000291452",
+            "ABC-123",
+        )
+
+        values.forEach { value ->
+            assertEquals(value, QrContentType.TEXT, classifyQrContent(value))
+        }
     }
 }

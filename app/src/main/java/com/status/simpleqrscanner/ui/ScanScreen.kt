@@ -95,7 +95,7 @@ fun ScanScreen(
         scanQrFromImage(context, uri) { value ->
             readingImage = false
             if (value == null) {
-                Toast.makeText(context, "圖片中找不到 QR Code", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "圖片中找不到 QR Code 或一維條碼", Toast.LENGTH_SHORT).show()
             } else {
                 onQrCode(context, value)
             }
@@ -151,7 +151,7 @@ fun ScanScreen(
                     )
                 }
                 Text(
-                    text = "將 QR Code 對準框內",
+                    text = "將 QR Code 或條碼對準框內",
                     color = Color.White,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier
@@ -224,8 +224,8 @@ private fun ScanHeader() {
 private fun ScannerShade() {
     val transition = rememberInfiniteTransition(label = "scan")
     val position by transition.animateFloat(
-        initialValue = -95f,
-        targetValue = 95f,
+        initialValue = -75f,
+        targetValue = 75f,
         animationSpec = infiniteRepeatable(tween(1500), RepeatMode.Reverse),
         label = "laser",
     )
@@ -233,7 +233,8 @@ private fun ScannerShade() {
         Box(
             modifier = Modifier
                 .align(Alignment.Center)
-                .size(238.dp)
+                .fillMaxWidth(0.82f)
+                .height(200.dp)
                 .border(3.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(24.dp)),
         ) {
             Box(
@@ -278,7 +279,7 @@ private fun CameraPermissionCard(modifier: Modifier, onRequest: () -> Unit) {
             Text("需要相機權限", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(8.dp))
             Text(
-                "相機畫面只用來辨識 QR Code，不會儲存或上傳。",
+                "相機畫面只用來辨識 QR Code 與一維條碼，不會儲存或上傳。",
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
